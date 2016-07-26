@@ -137,3 +137,7 @@ mute {{ config.mute }}
 {%- if config.reneg_sec is defined %}
 reneg-sec {{ config.reneg_sec }}
 {%- endif %}
+
+{%- if config.log is defined %}
+log {{ config.log }}
+{%- endif %}
