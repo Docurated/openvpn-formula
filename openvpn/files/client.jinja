@@ -117,6 +117,10 @@ cipher "{{ cipher }}"
 {%- endfor %}
 {%- endif %}
 
+{%- if config.keysize is defined %}
+keysize {{ config.keysize }}
+{%- endif %}
+
 {%- if config.comp_lzo is defined and config.comp_lzo == False %}
 ;comp-lzo
 {%- else %}
@@ -140,4 +144,8 @@ reneg-sec {{ config.reneg_sec }}
 
 {%- if config.log is defined %}
 log {{ config.log }}
+{%- endif %}
+
+{%- if config.remote_cert_tls is defined %}
+remote-cert-tls {{ config.remote_cert_tls }}
 {%- endif %}
